@@ -1,3 +1,5 @@
+package dynamic;
+
 public class PaintingHouses {
     public static void main(String[] args) {
         int[][] costs = {
