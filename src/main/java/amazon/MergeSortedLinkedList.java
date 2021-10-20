@@ -2,13 +2,15 @@ package amazon;
 
 import tree.Node;
 
+import static utils.Utils.printLinkedList;
+
 public class MergeSortedLinkedList {
   public static void main(String[] args) {
     Node firstList = new Node(1);
     Node three = new Node(3);
     firstList.next = three;
     three.next = new Node(6);
-    printResult(firstList);
+    printLinkedList(firstList);
     System.out.println();
 
     Node secondList = new Node(2);
@@ -17,19 +19,11 @@ public class MergeSortedLinkedList {
     Node eight = new Node(8);
     four.next = eight;
     eight.next = new Node(9);
-    printResult(secondList);
+    printLinkedList(secondList);
     System.out.println();
 
     Node node = mergeTree(firstList, secondList);
-    printResult(node);
-  }
-
-  private static void printResult(Node node) {
-    while (node != null) {
-      System.out.print(node.data + " ---> ");
-      node = node.next;
-    }
-    System.out.print("null");
+    printLinkedList(node);
   }
 
   private static Node mergeTree(Node firstListNode, Node secondListNode) {
