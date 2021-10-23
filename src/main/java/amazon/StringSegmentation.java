@@ -19,12 +19,13 @@ string: poojairannank == false
 public class StringSegmentation {
 
     public static void main(String[] args) {
-        String[] dictionary = {"iranna", "pooja", "ira", "ir", "nna"};
+        String[] dictionary = {"iranna", "pooja", "ira", "ir", "na"};
         System.out.println(isSegment(Arrays.stream(dictionary).collect(Collectors.toSet()), "irapooja", "", 0));
         System.out.println(isSegment(Arrays.stream(dictionary).collect(Collectors.toSet()), "irannapooja", "", 0));
         System.out.println(isSegment(Arrays.stream(dictionary).collect(Collectors.toSet()), "irannapoojank", "", 0));
         System.out.println(isSegment(Arrays.stream(dictionary).collect(Collectors.toSet()), "irairirannapooja", "", 0));
         System.out.println(isSegment(Arrays.stream(dictionary).collect(Collectors.toSet()), "abcdefghijklmn", "", 0));
+        System.out.println(isSegment(Arrays.stream(dictionary).collect(Collectors.toSet()), "irannapooja", "", 0));
     }
 
     private static boolean isSegment(Set<String> dictionary, String main, String sub, int index) {

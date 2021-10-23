@@ -20,4 +20,21 @@ All possile subsets for the given set of integers:
 2, 3, 4
  */
 public class SubsetOfGivenArray {
+
+  public static void main(String[] args) {
+    int[] input = {2, 3, 4};
+    subset(input, 0, "");
+  }
+
+  private static void subset(int[] input, int index, String result) {
+    if (index >= input.length) {
+      System.out.println(result);
+      return;
+    }
+
+    // this value
+    int nextIndex = index + 1;
+    subset(input, nextIndex, result);
+    subset(input, nextIndex, result + "," + input[index]);
+  }
 }
