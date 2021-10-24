@@ -1,4 +1,4 @@
-package dynamic;
+package dynamic.previous;
 
 public class LongestIncreasingSubSequence {
   public static void main(String[] args) {
