@@ -1,4 +1,4 @@
-package dynamic.onedimensional;
+package dynamic.onedimensional.recursion;
 
 import java.util.HashSet;
 import java.util.Set;

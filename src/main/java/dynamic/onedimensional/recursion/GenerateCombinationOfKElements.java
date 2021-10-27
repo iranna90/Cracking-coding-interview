@@ -1,4 +1,4 @@
-package dynamic.onedimensional;
+package dynamic.onedimensional.recursion;
 
 public class GenerateCombinationOfKElements {
   public static void main(String[] args) {
