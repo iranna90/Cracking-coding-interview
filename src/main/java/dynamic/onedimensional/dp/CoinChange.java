@@ -47,8 +47,7 @@ public class CoinChange {
   private static int iterative(int[] coins, int amount) {
     int[] dp = new int[amount + 1];
     dp[0] = 1;
-
-    for (int subAmount = 1; subAmount <= amount; subAmount++) {
+    /*for (int subAmount = 1; subAmount <= amount; subAmount++) {
 
       int ways = 0;
       for (final int coin : coins) {
@@ -58,8 +57,16 @@ public class CoinChange {
       }
 
       dp[subAmount] = ways;
-    }
+    }*/
 
+
+    for (final int coin : coins) {
+      for (int j = 1; j <= amount; j++) {
+        if (j - coin >= 0) {
+          dp[j] += dp[j - coin];
+        }
+      }
+    }
     return dp[amount];
   }
 }
