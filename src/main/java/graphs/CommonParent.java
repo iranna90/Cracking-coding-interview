@@ -90,4 +90,5 @@ public class CommonParent {
 
     return covers(root.left, t) || covers(root.right, t);
   }
+
 }
