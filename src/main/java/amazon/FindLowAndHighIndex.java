@@ -4,6 +4,8 @@ public class FindLowAndHighIndex {
     public static void main(String[] args) {
         int[] input = {1, 1, 2, 2, 2, 3, 3, 3, 4};
         printHighAndLow(input, 1);
+        printHighAndLow(input, 3);
+        printHighAndLow(input, 4);
     }
 
     private static void printHighAndLow(int[] input, int number) {

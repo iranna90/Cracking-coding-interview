@@ -20,10 +20,9 @@ public class CoinChange {
   }
 
   /*
-  Can choose any item from the list and have to find best for the remaining.
-  so the coin change of i amount is = makeChange(i-j) for all j in coin list
-  base j==0 return 1
-  j < 0 return 0
+ At any point we have 2 choices.
+ either include this item or do not include we will calculate the sum of both choice.
+ result[i][j] = result[i-coin][j] + result[i][j-1]
    */
   private static int makeChange(int[] coins, int index, int amount, AtomicInteger count) {
 
@@ -44,29 +43,18 @@ public class CoinChange {
     return waysWithThisCoin + wayWithoutThisCoin;
   }
 
-  private static int iterative(int[] coins, int amount) {
-    int[] dp = new int[amount + 1];
-    dp[0] = 1;
-    /*for (int subAmount = 1; subAmount <= amount; subAmount++) {
+  /*
 
-      int ways = 0;
-      for (final int coin : coins) {
-        if (subAmount - coin >= 0) {
-          ways = ways + dp[subAmount - coin];
-        }
-      }
-
-      dp[subAmount] = ways;
-    }*/
-
-
+   */
+  private static int iterative(int[] coins, int totalAmount) {
+    int[] result = new int[totalAmount + 1];
+    result[0] = 1;
     for (final int coin : coins) {
-      for (int j = 1; j <= amount; j++) {
-        if (j - coin >= 0) {
-          dp[j] += dp[j - coin];
-        }
+      for (int j = coin; j <= totalAmount; j++) {
+        result[j] += result[j - coin];
       }
     }
-    return dp[amount];
+
+    return result[totalAmount];
   }
 }
